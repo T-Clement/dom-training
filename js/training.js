@@ -9,11 +9,14 @@ btnE1.addEventListener("click", function() {
 /* ------------------------------------ */
 /* --- Exercice 2 --- */
 
-
+function getScrollValue(event) {
+    document.getElementById("ex2-scroll-value").innerHTML = window.scrollY
+}
+window.addEventListener("scroll", getScrollValue);
 
 /* ------------------------------------ */
 /* --- Exercice 3 --- */
-
+document.querySelector("ex3")
 
 /* ------------------------------------ */
 /* --- Exercice 4 --- */
