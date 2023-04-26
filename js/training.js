@@ -16,7 +16,11 @@ window.addEventListener("scroll", getScrollValue);
 
 /* ------------------------------------ */
 /* --- Exercice 3 --- */
-document.querySelector("ex3")
+const animalsArray = document.querySelector("#ex3-animals");
+const btnE3 = document.querySelector("#ex3 .exercice-sandbox :first-child");
+btnE3.addEventListener("click", function() {
+    animalsArray.appendChild(animalsArray.firstElementChild);
+})
 
 /* ------------------------------------ */
 /* --- Exercice 4 --- */
