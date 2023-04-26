@@ -51,6 +51,30 @@ btnE4.addEventListener("click", function () {
 /* --- Exercice 5 --- */
 
 
+const hexCharacters = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+
+function getCharacter(index) {
+	return hexCharacters[index];
+}
+
+function generateJustOneColor(){
+	let hexColorRep = "#";
+    for (let position = 0; position < 6; position++){
+        const randomPosition = Math.floor (Math.random() * hexCharacters.length);
+        hexColorRep += getCharacter(randomPosition);
+    }
+	return hexColorRep;
+}
+console.log(generateJustOneColor());
+
+//-------------------------------------------------//
+const hoverButtons = document.querySelectorAll("#ex5 .exercice-sandbox .flex-list .button");
+console.log(hoverButtons);
+
+hoverButtons.addEventListener("mouseover", function() {
+    this.style.backgroundColor = generateJustOneColor;
+})
+
 /* ------------------------------------ */
 /* --- Exercice 6 --- */
 
