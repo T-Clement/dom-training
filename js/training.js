@@ -1,9 +1,14 @@
 /* ------------------------------------ */
 /* --- Exercice 1 --- */
-
-
+// avec toggle
+const textE1 = document.querySelector("#ex1 .exercice-sandbox :nth-child(2)");
+const btnE1 = document.querySelector("#ex1 .exercice-sandbox > .js-button-ex1");
+btnE1.addEventListener("click", function() {
+    textE1.classList.toggle('text-disable');
+});
 /* ------------------------------------ */
 /* --- Exercice 2 --- */
+
 
 
 /* ------------------------------------ */
