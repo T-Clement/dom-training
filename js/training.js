@@ -24,8 +24,29 @@ btnE3.addEventListener("click", function() {
 
 /* ------------------------------------ */
 /* --- Exercice 4 --- */
+let counter = 0;
+const textE4 = document.getElementById('txt-e4')
+const btnE4 = document.querySelector('#ex4 .exercice-sandbox :first-child');
+btnE4.addEventListener("click", function () {
+    counter++;
+    if (counter === 1) {
+        btnE4.classList.add("btn-blue");
+    } else if (counter === 2) {
 
+        btnE4.classList.remove("btn-blue");
+        btnE4.classList.add("btn-red");
+    }else if (counter === 3) {
+        btnE4.classList.remove("btn-red");
+        btnE4.classList.add("btn-green");
+    }
 
+     if (counter > 3) {
+        counter = 1;
+        btnE4.classList.remove("btn-green");
+        btnE4.classList.add("btn-blue");
+     }
+    console.log(counter);
+});
 /* ------------------------------------ */
 /* --- Exercice 5 --- */
 
