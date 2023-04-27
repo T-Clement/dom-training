@@ -57,6 +57,7 @@ btnE4.addEventListener("click", function () {
 
 // function generate random color
 const hexCharacters = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+//
 
 function getCharacter(index) {
 	return hexCharacters[index];
@@ -94,8 +95,8 @@ document.getElementById('ex6-paragraph').textContent = "";
 let index = 0;
 
 // loop each 50ms, get the index and the character corresponding and add it to the <p></p> with a span
-// stop ? when there is no more index ? 
 const timer = setInterval(() => {
+    // if index not overtaking length of array/string
     if (index < textE6.length) {
         const newLetter = textE6.charAt(index);
         const letterAdded = document.createElement('span');
@@ -127,38 +128,29 @@ const btnE7 = document.getElementById("ex7-button");
 //target the list
 const list = document.getElementById("ex7-list");
 console.log(btnE7, list);
-
-
-
-// function addItemToList (array) {
-
-// }
+const listItems = document.querySelectorAll(".js-task-list-task");
 
 // on click, add item to list
 btnE7.addEventListener("click", function() {
     if (taskList.length > 0) {
         //create li element
         let listItem = document.createElement("li");
-        listItem.classList.add("task-list-task");
+        listItem.classList.add("task-list-task", "js-task-list-class");
         // put text inside li with shift on array
         listItem.textContent = taskList.shift();
         // appendChild for adding element "listItem" to the ul witch is the parent
         list.appendChild(listItem);
+        // event listener on li, if click is set bacl to taskList and is remove from HTML
+        listItem.addEventListener("click", function () {
+            taskList.unshift(this.innerText);
+            list.removeChild(this);
+        });
     } else {
-        
+        // btnE7.disabled = true;
         alert("Liste de tâches vide");
     }
 });
 
-
-
-// list.innerHTML += '<li class= task-list-task></li>'
-// btnE7.addEventListener("click", function() {
-//     list.innerHTML += '<li class= task-list-task></li>';
-//     list.textContent = taskList.shift();
-
-
-// });
 
 
 
