@@ -55,7 +55,7 @@ btnE4.addEventListener("click", function () {
 /* ------------------------------------ */
 /* --- Exercice 5 --- */
 
-
+// function generate random color
 const hexCharacters = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
 
 function getCharacter(index) {
@@ -70,12 +70,11 @@ function generateJustOneColor(){
     }
 	return hexColorRep;
 }
-console.log(generateJustOneColor());
 
 //-------------------------------------------------//
 const hoverButtons = document.querySelectorAll("#ex5 .exercice-sandbox .flex-list .button");
-console.log(hoverButtons);
 
+// function who add forEach element in the array an eventListener, which when hovering on buttons call the function generateRandomColor
 hoverButtons.forEach(function(button) {
     button.addEventListener("mouseover", function() {
     this.style.backgroundColor = generateJustOneColor();
