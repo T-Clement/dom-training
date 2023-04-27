@@ -27,6 +27,10 @@ btnE3.addEventListener("click", function() {
 let counter = 0;
 const textE4 = document.getElementById('txt-e4')
 const btnE4 = document.querySelector('#ex4 .exercice-sandbox :first-child');
+
+
+const arrayCoolors = ["btn-blue", "btn-red", "btn-green"] // à revoir avec ça
+
 btnE4.addEventListener("click", function () {
     counter++;
     if (counter === 1) {
@@ -46,6 +50,7 @@ btnE4.addEventListener("click", function () {
         btnE4.classList.add("btn-blue");
      }
     console.log(counter);
+
 });
 /* ------------------------------------ */
 /* --- Exercice 5 --- */
@@ -71,9 +76,12 @@ console.log(generateJustOneColor());
 const hoverButtons = document.querySelectorAll("#ex5 .exercice-sandbox .flex-list .button");
 console.log(hoverButtons);
 
-hoverButtons.addEventListener("mouseover", function() {
-    this.style.backgroundColor = generateJustOneColor;
-})
+hoverButtons.forEach(function(button) {
+    button.addEventListener("mouseover", function() {
+    this.style.backgroundColor = generateJustOneColor();
+    });
+});
+
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */
