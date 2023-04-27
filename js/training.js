@@ -141,7 +141,7 @@ btnE7.addEventListener("click", function() {
         listItem.textContent = taskList.shift();
         // appendChild for adding element "listItem" to the ul witch is the parent
         list.appendChild(listItem);
-        // event listener on li, if click is set bacl to taskList and is remove from HTML
+        // event listener on li, if click -> li is send back to taskList and remove from HTML
         listItem.addEventListener("click", function () {
             taskList.unshift(this.innerText);
             list.removeChild(this);
@@ -160,35 +160,31 @@ const btnShield = document.getElementById("ex8-button-shield");
 
 //data donc par exemple pour data-progress-id  on y a accès avec dataSet.progressId
 
+// possible de centraliser tous les boutons ? utilser le stockage de self pour this dans le dataset où on ajoute
+// le compteur
+
+// counters
 let levelCounter = 0;
 let strengthCounter = 0;
 let shieldCounter = 0;
 
 
-
-
+// life
 btnLevel.addEventListener("click", function() {
-    if (levelCounter < 100) {
-        levelCounter += 5;
-        console.log(levelCounter);
-    } else {
-        levelCounter = 100;
-    }
+    //Math.min to compare to values, with a max set to 100
+    levelCounter = Math.min(levelCounter += 5, 100);
     document.getElementById(this.dataset.progressId).style.width = levelCounter + '%';
 });
 
 
-
+// strength
 btnStrength.addEventListener("click", function() {
-    if (strengthCounter < 100) {
-        strengthCounter += 5;
-        console.log(strengthCounter);
-    } else {
-        strengthCounter = 100;
-    }
+    strengthCounter = Math.min(shieldCounter += 5, 100);    
     document.getElementById(this.dataset.progressId).style.width = strengthCounter + '%';
 });
 
+
+// shield
 btnShield.addEventListener("click", function() {
     if (shieldCounter < 100) {
         shieldCounter += 5;
