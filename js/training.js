@@ -132,6 +132,7 @@ const listItems = document.querySelectorAll(".js-task-list-task");
 
 // on click, add item to list
 btnE7.addEventListener("click", function() {
+    
     if (taskList.length > 0) {
         //create li element
         let listItem = document.createElement("li");
@@ -151,13 +152,49 @@ btnE7.addEventListener("click", function() {
     }
 });
 
-
-
-
-
-
-
-
-
 /* ------------------------------------ */
 /* --- Exercice 8 --- */
+const btnLevel = document.getElementById("ex8-button-level");
+const btnStrength = document.getElementById("ex8-button-strength");
+const btnShield = document.getElementById("ex8-button-shield");
+
+//data donc par exemple pour data-progress-id  on y a accès avec dataSet.progressId
+
+let levelCounter = 0;
+let strengthCounter = 0;
+let shieldCounter = 0;
+
+
+
+
+btnLevel.addEventListener("click", function() {
+    if (levelCounter < 100) {
+        levelCounter += 5;
+        console.log(levelCounter);
+    } else {
+        levelCounter = 100;
+    }
+    document.getElementById(this.dataset.progressId).style.width = levelCounter + '%';
+});
+
+
+
+btnStrength.addEventListener("click", function() {
+    if (strengthCounter < 100) {
+        strengthCounter += 5;
+        console.log(strengthCounter);
+    } else {
+        strengthCounter = 100;
+    }
+    document.getElementById(this.dataset.progressId).style.width = strengthCounter + '%';
+});
+
+btnShield.addEventListener("click", function() {
+    if (shieldCounter < 100) {
+        shieldCounter += 5;
+        console.log(shieldCounter);
+    } else {
+        shieldCounter = 100;
+    }
+    document.getElementById(this.dataset.progressId).style.width = shieldCounter + '%';
+});
