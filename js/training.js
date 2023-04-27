@@ -181,19 +181,22 @@ let shieldCounter = 0;
 btnLevel.addEventListener("click", function() {
     //Math.min to compare to values, with a max set to 100
     levelCounter = Math.min(levelCounter += 5, 100);
+    console.log("Level :" + levelCounter);
     document.getElementById(this.dataset.progressId).style.width = levelCounter + '%';
 });
 
 
 // strength
 btnStrength.addEventListener("click", function() {
-    strengthCounter = Math.min(shieldCounter += 5, 100);    
+    strengthCounter = Math.min(strengthCounter += 5, 100); 
+    console.log("Strength :" + strengthCounter);   
     document.getElementById(this.dataset.progressId).style.width = strengthCounter + '%';
 });
 
 
 // shield
 btnShield.addEventListener("click", function() {
-    levelCounter = Math.min(shieldCounter += 5, 100);
+    shieldCounter = Math.min(shieldCounter += 5, 100);
+    console.log("Shield :" + shieldCounter);
     document.getElementById(this.dataset.progressId).style.width = shieldCounter + '%';
 });
