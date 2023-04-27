@@ -145,10 +145,18 @@ btnE7.addEventListener("click", function() {
         listItem.addEventListener("click", function () {
             taskList.unshift(this.innerText);
             list.removeChild(this);
+            // btn stay active when there is items in listTask
+            if (taskList.length > 0) {
+                btnE7.disabled = false;
+            }
         });
+        // enabled the btn if there is items in the list && if btn is disabled
+        if (taskList.length && btnE7.disabled) {
+            btnE7.disabled = false;
+        }
     } else {
-        // btnE7.disabled = true;
-        alert("Liste de tâches vide");
+        // disabled the btn if no more items in taskList
+        btnE7.disabled = true;
     }
 });
 
