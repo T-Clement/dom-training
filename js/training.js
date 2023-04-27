@@ -88,7 +88,7 @@ hoverButtons.forEach(function(button) {
 const textE6 = document.getElementById('ex6-paragraph').textContent.trim();
 // delete all the text
 document.getElementById('ex6-paragraph').textContent = ""; 
-console.log(textE6);
+// console.log(textE6);
 
 // index for target with charAt()
 let index = 0;
@@ -110,6 +110,9 @@ const timer = setInterval(() => {
 /* ------------------------------------ */
 /* --- Exercice 7 --- */
 
+
+// this pour remove le li séléctionner ou event.target ?
+
 const taskList = [
     "🥖 Acheter du pain",
     "🗑️ Descendre la poubelle",
@@ -118,6 +121,50 @@ const taskList = [
     "🧹 Passer l'aspirateur",
     "🌳 Tondre la pelouse"
 ];
+
+// target the button
+const btnE7 = document.getElementById("ex7-button");
+//target the list
+const list = document.getElementById("ex7-list");
+console.log(btnE7, list);
+
+
+
+// function addItemToList (array) {
+
+// }
+
+// on click, add item to list
+btnE7.addEventListener("click", function() {
+    if (taskList.length > 0) {
+        //create li element
+        let listItem = document.createElement("li");
+        listItem.classList.add("task-list-task");
+        // put text inside li with shift on array
+        listItem.textContent = taskList.shift();
+        // appendChild for adding element "listItem" to the ul witch is the parent
+        list.appendChild(listItem);
+    } else {
+        
+        alert("Liste de tâches vide");
+    }
+});
+
+
+
+// list.innerHTML += '<li class= task-list-task></li>'
+// btnE7.addEventListener("click", function() {
+//     list.innerHTML += '<li class= task-list-task></li>';
+//     list.textContent = taskList.shift();
+
+
+// });
+
+
+
+
+
+
 
 
 /* ------------------------------------ */
