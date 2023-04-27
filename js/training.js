@@ -84,9 +84,29 @@ hoverButtons.forEach(function(button) {
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */
+// get access to text inside of the <p></p>
+const textE6 = document.getElementById('ex6-paragraph').textContent.trim();
+// delete all the text
+document.getElementById('ex6-paragraph').textContent = ""; 
+console.log(textE6);
 
+// index for target with charAt()
+let index = 0;
 
-
+// loop each 50ms, get the index and the character corresponding and add it to the <p></p> with a span
+// stop ? when there is no more index ? 
+const timer = setInterval(() => {
+    if (index < textE6.length) {
+        const newLetter = textE6.charAt(index);
+        const letterAdded = document.createElement('span');
+        letterAdded.textContent = newLetter;
+        document.getElementById('ex6-paragraph').appendChild(letterAdded);
+        index++;
+        // console.log(letterAdded);
+    } else {
+        clearInterval(timer); // to stop the loop
+    }
+}, 50);
 /* ------------------------------------ */
 /* --- Exercice 7 --- */
 
