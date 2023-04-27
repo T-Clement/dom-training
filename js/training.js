@@ -194,11 +194,6 @@ btnStrength.addEventListener("click", function() {
 
 // shield
 btnShield.addEventListener("click", function() {
-    if (shieldCounter < 100) {
-        shieldCounter += 5;
-        console.log(shieldCounter);
-    } else {
-        shieldCounter = 100;
-    }
+    levelCounter = Math.min(shieldCounter += 5, 100);
     document.getElementById(this.dataset.progressId).style.width = shieldCounter + '%';
 });
