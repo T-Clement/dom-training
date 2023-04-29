@@ -162,41 +162,22 @@ btnE7.addEventListener("click", function() {
 
 /* ------------------------------------ */
 /* --- Exercice 8 --- */
-const btnLevel = document.getElementById("ex8-button-level");
-const btnStrength = document.getElementById("ex8-button-strength");
-const btnShield = document.getElementById("ex8-button-shield");
+
 
 //data donc par exemple pour data-progress-id  on y a accès avec dataSet.progressId
-
 // possible de centraliser tous les boutons ? utilser le stockage de self pour this dans le dataset où on ajoute
 // le compteur
 
-// counters
-let levelCounter = 0;
-let strengthCounter = 0;
-let shieldCounter = 0;
+let counters = {
+    "ex8-level": 0,
+    "ex8-strength": 0,
+    "ex8-shield": 0
+}
 
-
-// life
-btnLevel.addEventListener("click", function() {
-    //Math.min to compare to values, with a max set to 100
-    levelCounter = Math.min(levelCounter += 5, 100);
-    console.log("Level :" + levelCounter);
-    document.getElementById(this.dataset.progressId).style.width = levelCounter + '%';
-});
-
-
-// strength
-btnStrength.addEventListener("click", function() {
-    strengthCounter = Math.min(strengthCounter += 5, 100); 
-    console.log("Strength :" + strengthCounter);   
-    document.getElementById(this.dataset.progressId).style.width = strengthCounter + '%';
-});
-
-
-// shield
-btnShield.addEventListener("click", function() {
-    shieldCounter = Math.min(shieldCounter += 5, 100);
-    console.log("Shield :" + shieldCounter);
-    document.getElementById(this.dataset.progressId).style.width = shieldCounter + '%';
+document.querySelectorAll('button[data-progress-id]').forEach(btn => {
+    btn.addEventListener("click", function(e) {
+        let key = this.dataset.progressId;
+        counters[key] = Math.min(counters[key] += 5, 100);
+        document.getElementById(key).style.width = `${counters[key]}%`;
+    })
 });
